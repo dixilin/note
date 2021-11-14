@@ -1,0 +1,19 @@
+{
+  "name": "blog_new",
+  "version": "1.0.0",
+  "author": "dicky",
+  "scripts": {
+    "dev": "vuepress dev . --open --host \"localhost\"",
+    "build": "vuepress build ."
+  },
+  "devDependencies": {
+    "vuepress": "1.8.2",
+    "vuepress-theme-reco": "1.6.6"
+  },
+  "description": "blog_new",
+  "dependencies": {
+    "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
+    "vuepress-plugin-cursor-effects": "^1.0.2",
+    "vuepress-plugin-ribbon-animation": "^1.1.3"
+  }
+}
