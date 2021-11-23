@@ -1,4 +1,4 @@
-const BASE_URL = process.env.npm_lifecycle_event === 'dev'  ? '/' : process.env.BUILD_ENV === 'github' ? '/note/public' : './'
+const BASE_URL = process.env.npm_lifecycle_event === 'dev'  ? '/' : process.env.BUILD_ENV === 'github' ? '/note/public/' : './'
 
 module.exports = {
   "title": "叉子好像不行",
