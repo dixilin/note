@@ -1,10 +1,10 @@
-const BASE_URL = process.env.npm_lifecycle_event === 'dev' ? '/' : process.env.BUILD_ENV === 'github' ? 'https://dixilin.github.io/note/dist/' : './'
+// const BASE_URL = process.env.npm_lifecycle_event === 'dev' ? '/' : process.env.BUILD_ENV === 'github' ? 'https://dixilin.github.io/note/' : './'
 
 module.exports = {
   "title": "叉子好像不行",
   "description": "叉子写给自己看的笔记",
   "dest": "dist",
-  "base": BASE_URL,
+  "base": '/',
   "head": [
     [
       "link",

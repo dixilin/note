@@ -4,7 +4,6 @@
   "author": "dicky",
   "scripts": {
     "dev": "vuepress dev . --open --host \"localhost\"",
-    "build": "yarn build:my_server",
     "build:gh": "cross-env BUILD_ENV=github vuepress build .",
     "build:my_server": "cross-env BUILD_ENV=my_server vue press build ."
   },
