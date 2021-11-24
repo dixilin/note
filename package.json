@@ -7,10 +7,14 @@
     "build": "yarn build:my_server",
     "build:gh": "cross-env BUILD_ENV=github vuepress build .",
     "build:my_server": "cross-env BUILD_ENV=my_server vuepress build .",
-    "deploy": "yarn build && node upload.js"
+    "deploy": "yarn build && node scripts/deploy.js"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "dayjs": "^1.10.7",
+    "inquirer": "^8.2.0",
+    "progress": "^2.0.3",
+    "ssh2": "^1.5.0",
     "vuepress": "1.8.2",
     "vuepress-theme-reco": "1.6.6"
   },
