@@ -4,8 +4,10 @@
   "author": "dicky",
   "scripts": {
     "dev": "vuepress dev . --open --host \"localhost\"",
+    "build": "yarn build:my_server",
     "build:gh": "cross-env BUILD_ENV=github vuepress build .",
-    "build:my_server": "cross-env BUILD_ENV=my_server vue press build ."
+    "build:my_server": "cross-env BUILD_ENV=my_server vuepress build .",
+    "deploy": "yarn build && node upload.js"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
@@ -15,6 +17,7 @@
   "description": "blog_new",
   "dependencies": {
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
+    "cos-nodejs-sdk-v5": "^2.11.2",
     "vuepress-plugin-cursor-effects": "^1.0.2",
     "vuepress-plugin-ribbon-animation": "^1.1.3"
   }
