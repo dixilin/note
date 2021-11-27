@@ -7,8 +7,6 @@ categories:
  - 配置
 ---
 
-**项目默认使用js，ts需增加其他额外配置，下次再写。**
-
 ### cra创建项目
 ```shell
 yarn create-react app <project-name>
@@ -29,7 +27,7 @@ yarn start
 
 ### eslint配置
 
-删除package.json内的extends:["react-app"]；
+删除package.json内的eslintConfig里的extends:["react-app"]；
 根目录新建.eslintrc.json（或者.js都行），我使用的是json后缀
 
 由于react-app也是一种规则，直接可使用以下配置进行拓展
@@ -53,8 +51,15 @@ yarn start
     "no-unused-vars": "error", // 禁止出现未使用过的变量
     "react/prop-types": 0, // 防止在react组件定义中缺少props验证
     "no-multiple-empty-lines": ["error", { "max": 1 }], // 禁止出现多行空行
-    "object-curly-newline": ["error", "always"] // 强制大括号内换行符的一致性
-  }
+  },
+  // ts额外eslint配置可写在这里
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "rules": {
+      }
+    }
+  ]
 }
 ```
 
@@ -63,18 +68,18 @@ html方面可使用prettier
 yarn add eslint-config-prettier eslint-plugin-prettier prettier -D
 ```
 
-根目录创建.prettierrc.js文件,可直接使用以下配置
-```js
-module.exports = {
-  semi: false,
-  singleQuete: true,
-  tabWidth: 2,
-  prindWidth: 100,
-  trailingComma: 'none',
-  bracketSpacing: true,
-  jsxBracketSameLine: false,
-  endOfLine: 'lf',
-  htmlWhiteSpaceSensitivity: 'strict'
+根目录创建.prettierrc.json文件,可直接使用以下配置
+```json
+{
+  "semi": false,
+  "singleQuete": true,
+  "tabWidth": 2,
+  "prindWidth": 100,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "endOfLine": "lf",
+  "htmlWhiteSpaceSensitivity": "strict"
 }
 ```
 
@@ -85,7 +90,8 @@ vscode settings增加以下配置保存可自动校验规范代码以及jsx内ht
     "source.fixAll": true
   },
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
   }
 }
 ```
