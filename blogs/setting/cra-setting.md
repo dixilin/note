@@ -33,14 +33,12 @@ yarn start
 由于react-app也是一种规则，直接可使用以下配置进行拓展
 ```json
 {
-  "extends": [
-    "react-app", "prettier"
-  ],
+  "extends": ["react-app", "prettier"],
   "rules": {
     "semi": ["error", "never"], // 末尾不添加分号
     "quotes": ["error", "single"], // js中 强制使用单引号 
     "jsx-quotes": ["error", "prefer-single"], // JSX 属性中使用一致的单引号或双引号 
-    "indent": ["error", "tab"], // 强制使用tab缩进
+    "indent": ["error", 2], // 缩进
     "eqeqeq": "error", // 必须使用 === 和 !==
     "no-empty-function": "error", // 禁止空函数
     "no-multi-spaces": "error", // 禁止使用多个空格
@@ -51,6 +49,27 @@ yarn start
     "no-unused-vars": "error", // 禁止出现未使用过的变量
     "react/prop-types": 0, // 防止在react组件定义中缺少props验证
     "no-multiple-empty-lines": ["error", { "max": 1 }], // 禁止出现多行空行
+    "computed-property-spacing": ["error", "never"],
+    "no-whitespace-before-property": "error", // 禁止属性前有空白
+    "key-spacing": ["error", { "beforeColon": false }], // 对象冒号前无空格后有空格
+    "comma-spacing": "error", // 逗号前后间距
+    "no-mixed-spaces-and-tabs": "error", // 不允许缩进混合空格和tab
+    "arrow-spacing": "error", // 箭头函数使用一致空格
+    "array-bracket-spacing": ["error", "always", { "singleValue": false }], // 数组空格
+    "block-spacing": "error", // 禁止或强制在代码块中开括号前和闭括号后有空格
+    "object-curly-spacing": ["error", "always"], // 对象花括号空格
+    "import/no-anonymous-default-export": [
+      "warn", 
+      {
+        "allowArray": true,
+        "allowArrowFunction": true,
+        "allowAnonymousClass": true,
+        "allowAnonymousFunction": true,
+        "allowCallExpression": true,
+        "allowLiteral": true,
+        "allowObject": true
+      }
+    ]
   },
   // ts额外eslint配置可写在这里
   "overrides": [
