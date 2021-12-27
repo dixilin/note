@@ -160,15 +160,15 @@ deploy-job:
 
 对象存储我使用的是腾讯云的cos，（也可使用阿里云的oss，secretID及secretKey及upload脚本需要修改成对应的）
 
-![image-20211105181137375](https://github.com/dixilin/note/blob/main/images/image-20211105181137375.png)
+![image-20211105181137375](/images/image-20211105181137375.png)
 
 需创建存储桶，访问权限配置为共有读私有写
 
 ### 新建秘钥
 
-![image-20211105181600692](https://github.com/dixilin/note/blob/main/images/image-20211105181600692.png)
+![image-20211105181600692](/images/image-20211105181600692.png)
 
-![image-20211105181634411](https://github.com/dixilin/note/blob/main/images/image-20211105181634411.png)
+![image-20211105181634411](/images/image-20211105181634411.png)
 
 获取到secretId及secretKey
 
@@ -335,7 +335,7 @@ export default defineConfig({
 
 先开启防火墙通行端口，我设置的为6688
 
-![image-20211105182425319](https://github.com/dixilin/note/blob/main/images/image-20211105182425319.png)
+![image-20211105182425319](/images/image-20211105182425319.png)
 
 ### nginx配置
 
@@ -367,9 +367,9 @@ export default defineConfig({
 
 cos配置静态资源跨域
 
-![image-20211105182806748](https://github.com/dixilin/note/blob/main/images/image-20211105182806748.png)
+![image-20211105182806748](/images/image-20211105182806748.png)
 
 访问http://81.68.107.230:6688，即转发成功
 
-![image-20211105182855329](https://github.com/dixilin/note/blob/main/images/image-20211105182855329.png)
+![image-20211105182855329](/images/image-20211105182855329.png)
 
