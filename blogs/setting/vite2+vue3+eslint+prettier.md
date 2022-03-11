@@ -14,7 +14,7 @@ yarn create vite my-vue-app --template vue
 
 ### 安装eslint、prettier及相关依赖
 ```shell
-yarn add babel-eslint eslint-plugin-vue @vue/eslint-config-standard eslint-plugin-node eslint-plugin-promise   eslint-plugin-import prettier eslint-plugin-prettier @vue/eslint-config-prettier -D
+yarn add eslint eslint-plugin-vue prettier eslint-plugin-prettier @vue/eslint-config-prettier -D
 ```
 
 ### 根目录创建.eslintrc.js文件
@@ -23,15 +23,20 @@ yarn add babel-eslint eslint-plugin-vue @vue/eslint-config-standard eslint-plugi
 module.exports = {
   root: true,
   env: {
-    node: true
+    browser: true,
+    node: true,
+    es6: true
   },
-  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
+  extends: ['plugin:vue/vue3-essential', 'eslint:recommended', 'prettier', '@vue/prettier'],
+  plugins: ['prettier'],
   parserOptions: {
-    parser: 'babel-eslint'
+    ecmaVersion: 2017
   },
   rules: {
-    'no-console': 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'prettier/prettier': 'error'
+  },
+  globals: {
+    defineProps: 'readonly'
   }
 }
 ```
