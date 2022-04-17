@@ -30,10 +30,14 @@ module.exports = {
   extends: ['plugin:vue/vue3-essential', 'eslint:recommended', 'prettier', '@vue/prettier'],
   plugins: ['prettier'],
   parserOptions: {
-    ecmaVersion: 2017
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   rules: {
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    'vue/multi-word-component-names': 'off'
   },
   globals: {
     defineProps: 'readonly'
@@ -41,9 +45,9 @@ module.exports = {
 }
 ```
 
-### 根目录创建prettier.config.js
+### 根目录创建.prettierrc.js
 ```js
-// prettier.config.js
+// .prettierrc.js
 module.exports = {
   printWidth: 100,
   tabWidth: 2,
@@ -79,7 +83,7 @@ export default defineConfig({
   plugins: [
     vue(),
     eslintPlugin({
-      include: ['src/**/*.vue', 'src/**/*.js']
+      include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue']
     })
   ],
   resolve: {
